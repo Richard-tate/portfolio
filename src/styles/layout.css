@@ -1,0 +1,383 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+body {
+  height: 100vh;
+  background-color: #000;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+}
+
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+
+.layout {
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.55)), to(rgba(0, 0, 0, 0.55))), url("../images/bg.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../images/bg.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+}
+
+.layout.loading {
+  z-index: -2;
+}
+
+.layout::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0;
+  -webkit-transition: opacity ease 3s 2s;
+  transition: opacity ease 3s 2s;
+  z-index: -1;
+}
+
+.layout.loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 1;
+}
+
+main {
+  height: 90%;
+  color: #fff;
+  padding: 1rem;
+}
+
+footer {
+  min-height: 10%;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+  z-index: 0;
+  opacity: 1;
+  -webkit-transition: opacity ease-in-out 3s 1s;
+  transition: opacity ease-in-out 3s 1s;
+}
+
+footer.loading {
+  z-index: -3;
+  opacity: 0;
+}
+
+.hero-container {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 1;
+  -webkit-transition: opacity ease-out 2.5s;
+  transition: opacity ease-out 2.5s;
+}
+
+.hero-container.loading {
+  opacity: 0;
+}
+
+.hero {
+  width: 100%;
+  max-height: 80%;
+  min-height: 30%;
+  padding: 0.5rem;
+  border-top: 2px solid rgba(0, 255, 128, 0.5);
+  border-bottom: 2px solid rgba(0, 255, 128, 0.5);
+  text-align: center;
+  -webkit-transition: all ease-in-out 1s 0.5s;
+  transition: all ease-in-out 1s 0.5s;
+  -webkit-animation: fadeIn 1s ease-in-out forwards;
+          animation: fadeIn 1s ease-in-out forwards;
+  position: relative;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  background: rgba(0, 255, 128, 0.5);
+  position: absolute;
+  height: 104%;
+  -webkit-transition: all ease-in-out 2s 0.3s;
+  transition: all ease-in-out 2s 0.3s;
+  width: 2px;
+}
+
+.hero::before {
+  left: 1%;
+  top: -2%;
+}
+
+.hero::after {
+  right: 1%;
+  top: -2%;
+}
+
+.hero.loading {
+  max-height: 4px;
+  min-height: 4px;
+}
+
+.hero.loading::after,
+.hero.loading::before {
+  height: 0%;
+  top: 50%;
+  background: rgba(0, 255, 128, 0.2);
+  width: 1px;
+}
+
+.hero-info {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 3s ease-in-out 1.5s;
+  transition: opacity 3s ease-in-out 1.5s;
+  line-height: 1.4;
+  margin: 1rem 0;
+  padding: 0 10px;
+}
+
+.hero-info p {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem 0;
+}
+
+.hero-info.loading {
+  opacity: 0;
+}
+
+.nav-btns {
+  margin-top: 2.2rem;
+  border: 1px solid rgba(0, 255, 128, 0.6);
+  background-color: rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  min-width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: 6px;
+  position: relative;
+  -webkit-animation: fadeIn 1s ease-in-out forwards;
+          animation: fadeIn 1s ease-in-out forwards;
+}
+
+.nav-btns::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 96%;
+  border-left: 1px solid rgba(0, 255, 128, 0.5);
+  border-right: 1px solid rgba(0, 255, 128, 0.5);
+  position: absolute;
+  top: -95%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.btn,
+.modal_btn {
+  cursor: pointer;
+  background: transparent;
+  border: transparent;
+  color: #fff;
+  padding: 10px;
+}
+
+.btn.About {
+  border-radius: 6px 0 0 6px;
+}
+
+.btn.Contact {
+  border-radius: 0 6px 6px 0;
+}
+
+.btn.Projects {
+  border-left: 1px solid rgba(0, 255, 128, 0.3);
+  border-right: 1px solid rgba(0, 255, 128, 0.3);
+}
+
+.btn:hover,
+.btn:focus {
+  background: rgba(0, 255, 128, 0.219);
+}
+
+.modal {
+  width: 90%;
+  background: rgba(30, 30, 30, 0.95);
+  height: 90%;
+  position: relative;
+  margin: 1rem auto 0;
+  padding: 1rem 0;
+  -webkit-animation: fadeIn 0.8s ease-in-out forwards;
+          animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.modal_btn.active {
+  background: steelblue;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  border: transparent;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 0 6px;
+  background-color: #404040;
+  border-radius: 50%;
+}
+
+.close:hover,
+.close:focus {
+  background-color: #fff;
+  color: #505050;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+  -webkit-animation: fadeIn 0.8s ease-in-out forwards;
+          animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.modal-content {
+  max-width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+@media (min-width: 700px) {
+  .hero {
+    max-width: 75%;
+  }
+  .nav-btns {
+    max-width: 60%;
+    min-width: 15%;
+  }
+  .modal {
+    max-width: 60%;
+  }
+  .hero::before,
+  .hero::after {
+    height: 108%;
+  }
+  .hero::before {
+    left: 1%;
+    top: -4%;
+  }
+  .hero::after {
+    right: 1%;
+    top: -4%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hero::before,
+  .hero::after {
+    height: 114%;
+  }
+  .hero::before {
+    left: 1%;
+    top: -7%;
+  }
+  .hero::after {
+    right: 1%;
+    top: -7%;
+  }
+  .hero {
+    min-height: 40%;
+    padding: 1rem 0.5rem;
+  }
+  .hero.loading {
+    max-height: 4px;
+    min-height: 4px;
+    padding: 0.5rem;
+  }
+}
+/*# sourceMappingURL=layout.css.map */
